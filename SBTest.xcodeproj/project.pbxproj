@@ -25,7 +25,6 @@
 		1A30A95E2AF3C51200DAFC86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30A95D2AF3C51200DAFC86 /* AppDelegate.swift */; };
 		1A30A9602AF3C51200DAFC86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30A95F2AF3C51200DAFC86 /* SceneDelegate.swift */; };
 		1A30A9652AF3C51200DAFC86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A30A9632AF3C51200DAFC86 /* Main.storyboard */; };
-		1A30A9682AF3C51200DAFC86 /* SBTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A30A9662AF3C51200DAFC86 /* SBTest.xcdatamodeld */; };
 		1A30A96A2AF3C51500DAFC86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A30A9692AF3C51500DAFC86 /* Assets.xcassets */; };
 		1A30A96D2AF3C51500DAFC86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A30A96B2AF3C51500DAFC86 /* LaunchScreen.storyboard */; };
 		1A30A9782AF3C51500DAFC86 /* SBTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30A9772AF3C51500DAFC86 /* SBTestTests.swift */; };
@@ -102,7 +101,6 @@
 		1A30A95D2AF3C51200DAFC86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A30A95F2AF3C51200DAFC86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1A30A9642AF3C51200DAFC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1A30A9672AF3C51200DAFC86 /* SBTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SBTest.xcdatamodel; sourceTree = "<group>"; };
 		1A30A9692AF3C51500DAFC86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A30A96C2AF3C51500DAFC86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A30A96E2AF3C51500DAFC86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 				1A2946AC2AF51F6300F648F6 /* Resourses */,
 				1A30A9912AF3C5A100DAFC86 /* Assets */,
 				1A30A96E2AF3C51500DAFC86 /* Info.plist */,
-				1A30A9662AF3C51200DAFC86 /* SBTest.xcdatamodeld */,
 			);
 			path = SBTest;
 			sourceTree = "<group>";
@@ -668,7 +665,6 @@
 				1A2946C32AF51F9B00F648F6 /* UITextFieldX.swift in Sources */,
 				1A711BB12AF671860061757D /* MovieDetailViewController.swift in Sources */,
 				1A2946C12AF51F9B00F648F6 /* UIViewXRadialGradient.swift in Sources */,
-				1A30A9682AF3C51200DAFC86 /* SBTest.xcdatamodeld in Sources */,
 				1A30A99B2AF3C64C00DAFC86 /* BaseViewModel.swift in Sources */,
 				1A2946BE2AF51F9B00F648F6 /* UIVisualEffectViewX.swift in Sources */,
 				1A30A9BA2AF3C7B100DAFC86 /* UItableViewExt.swift in Sources */,
@@ -1054,19 +1050,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1A30A9662AF3C51200DAFC86 /* SBTest.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1A30A9672AF3C51200DAFC86 /* SBTest.xcdatamodel */,
-			);
-			currentVersion = 1A30A9672AF3C51200DAFC86 /* SBTest.xcdatamodel */;
-			path = SBTest.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1A30A9522AF3C51200DAFC86 /* Project object */;
 }
