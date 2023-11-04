@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class MovieDetailViewController: BaseViewController {
     
@@ -98,7 +99,8 @@ class MovieDetailViewController: BaseViewController {
         if let imgUrl = self.viewModel.movieDetail?.posterPath, imgUrl != ""
         {
             let imgFullUrl = "\(Constant.imagesBaseUrl)\(imgUrl)"
-            self.imgViewMovie.setImageFromUrl(path: imgFullUrl)
+            imgViewMovie.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
+            imgViewMovie.sd_setImage(with: URL(string: imgFullUrl), placeholderImage: #imageLiteral(resourceName: "clapboard"))
         }
         else
         {

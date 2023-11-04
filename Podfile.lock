@@ -5,23 +5,29 @@ PODS:
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - SDWebImage (5.15.6):
+    - SDWebImage/Core (= 5.15.6)
+  - SDWebImage/Core (5.15.6)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - AlamofireImage (~> 4.1)
   - NVActivityIndicatorView
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
     - NVActivityIndicatorView
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
 
-PODFILE CHECKSUM: ff0db044f2618e293dfb5db866d5bc6de0a1aba6
+PODFILE CHECKSUM: 4b1b738832b209fd9bb4dc745fda9c631536b1b8
 
 COCOAPODS: 1.12.0

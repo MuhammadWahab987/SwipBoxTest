@@ -10,6 +10,7 @@ target 'SBTest' do
 pod 'Alamofire', '~> 5.2'
 pod 'AlamofireImage', '~> 4.1'
 pod 'NVActivityIndicatorView'
+pod 'SDWebImage'
 
   target 'SBTestTests' do
     inherit! :search_paths

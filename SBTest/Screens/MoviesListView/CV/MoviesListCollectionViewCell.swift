@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MoviesListCollectionViewCell: UICollectionViewCell {
 
@@ -35,8 +36,10 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         if let imgUrl = movie.posterPath, imgUrl != ""
         {
             let imgFullUrl = "\(Constant.imagesBaseUrl)\(imgUrl)"
-            imgViewMovie.setImageWithAlomofire(withUrl: URL(string: imgFullUrl)!, andPlaceholder:#imageLiteral(resourceName: "clapboard"))
-            //imgViewMovie.setImageFromUrl(path: imgFullUrl)
+            
+            imgViewMovie.clipsToBounds = true
+            imgViewMovie.sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
+            imgViewMovie.sd_setImage(with: URL(string: imgFullUrl), placeholderImage: #imageLiteral(resourceName: "clapboard"))
         }
         else
         {
