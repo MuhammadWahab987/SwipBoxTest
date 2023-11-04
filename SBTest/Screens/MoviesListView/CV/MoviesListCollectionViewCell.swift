@@ -12,7 +12,6 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
     
     
     //MARK: - Outlets
-    @IBOutlet weak var bgVew: UIView!
     @IBOutlet weak var imgViewMovie: UIImageView!
     @IBOutlet weak var lblMovieName: UILabel!
     @IBOutlet weak var lblMovieDate: UILabel!
@@ -37,13 +36,14 @@ class MoviesListCollectionViewCell: UICollectionViewCell {
         {
             let imgFullUrl = "\(Constant.imagesBaseUrl)\(imgUrl)"
             imgViewMovie.setImageWithAlomofire(withUrl: URL(string: imgFullUrl)!, andPlaceholder:#imageLiteral(resourceName: "clapboard"))
+            //imgViewMovie.setImageFromUrl(path: imgFullUrl)
         }
         else
         {
             imgViewMovie.image = #imageLiteral(resourceName: "clapboard")
         }
-        lblMovieName.text = movie.originalTitle ?? ""
-        lblMovieDate.text = movie.releaseDate ?? ""
+        lblMovieName.text = movie.originalTitle ?? "N/A"
+        lblMovieDate.text = movie.releaseDate ?? "N/A"
     }
 
 }

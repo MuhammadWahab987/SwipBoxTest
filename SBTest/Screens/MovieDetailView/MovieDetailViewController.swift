@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MovieDetailViewController: BaseViewController {
     
@@ -20,6 +21,7 @@ class MovieDetailViewController: BaseViewController {
     
     
     // MARK: - Variables & Constants
+    let networkReachabilityManager = NetworkReachabilityManager()
     var movieId = ""
     var viewModel:  MovieDetailViewModel! {
         didSet {
@@ -44,7 +46,36 @@ class MovieDetailViewController: BaseViewController {
         super.viewDidLoad()
         setupViewController()
         setupNavigationBarUI()
-        viewModel.loadData(movieId: self.movieId)
+        
+        
+        if networkReachabilityManager?.isReachable ?? false
+        {
+            viewModel.loadData(movieId: self.movieId)
+        }
+        else
+        {
+            AlertBuilder.showBannerBelowNavigation(message: "No Internet")
+            if UserDefaults.isExists(key: movieId)
+            {
+                if let movie = UserDefaultsHelper().getMovie(movieId: movieId)
+                {
+                    viewModel.movieDetail = movie
+                    feedView()
+                }
+                else
+                {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+            }
+            else
+            {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
     }
     
     // MARK: - UIViewController Helper Methods
@@ -62,6 +93,29 @@ class MovieDetailViewController: BaseViewController {
     // MARK: - IBActions
     
     // MARK: - Private Methods
+    func feedView()
+    {
+        if let imgUrl = self.viewModel.movieDetail?.posterPath, imgUrl != ""
+        {
+            let imgFullUrl = "\(Constant.imagesBaseUrl)\(imgUrl)"
+            self.imgViewMovie.setImageFromUrl(path: imgFullUrl)
+        }
+        else
+        {
+            self.imgViewMovie.image = #imageLiteral(resourceName: "clapboard")
+        }
+        
+        
+        
+        
+        self.lblMovieName.text = self.viewModel.movieDetail?.originalTitle ?? "N/A"
+        self.lblOverview.text = self.viewModel.movieDetail?.overview ?? "N/A"
+        
+        self.lblStatus.text = self.viewModel.movieDetail?.status
+        self.lblBudget.text = "$\(self.viewModel.movieDetail?.budget ?? 0)"
+        self.lblRevenue.text = "$\(self.viewModel.movieDetail?.revenue ?? 0)"
+        self.lblReleaseDate.text = self.viewModel.movieDetail?.releaseDate
+    }
 }
 
 extension MovieDetailViewController:  MovieDetailViewModelDelegate {
@@ -69,29 +123,7 @@ extension MovieDetailViewController:  MovieDetailViewModelDelegate {
         DispatchQueue.main.async {
             if isSuccessFullAPIResponse
             {
-                
-                
-                if let imgUrl = self.viewModel.movieDetail?.posterPath, imgUrl != ""
-                {
-                    let imgFullUrl = "\(Constant.imagesBaseUrl)\(imgUrl)"
-                    self.imgViewMovie.setImageWithAlomofire(withUrl: URL(string: imgFullUrl)!, andPlaceholder:#imageLiteral(resourceName: "clapboard"))
-                }
-                else
-                {
-                    self.imgViewMovie.image = #imageLiteral(resourceName: "clapboard")
-                }
-                
-                
-                
-                
-                self.lblMovieName.text = self.viewModel.movieDetail?.originalTitle
-                self.lblOverview.text = self.viewModel.movieDetail?.overview
-                
-                self.lblStatus.text = self.viewModel.movieDetail?.status
-                self.lblBudget.text = "$\(self.viewModel.movieDetail?.budget ?? 0)"
-                self.lblRevenue.text = "$\(self.viewModel.movieDetail?.revenue ?? 0)"
-                self.lblReleaseDate.text = self.viewModel.movieDetail?.releaseDate
-                
+                self.feedView()
             }
         }
     }

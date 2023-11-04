@@ -30,11 +30,17 @@ class MovieDetailViewModel: BaseViewModel {
             self.delegate?.hideProgress()
             
             if response.success {
-                let movieDetailModelResp = response.data as? MovieDetailModel
-                print("movieDetailModelResp: ", movieDetailModelResp)
-                self.movieDetail = movieDetailModelResp
-                self.delegate?.updateView(isSuccessFullAPIResponse: true)
-                
+                if let movieDetailModelResp = response.data as? MovieDetailModel
+                {
+                    print("movieDetailModelResp: ", movieDetailModelResp)
+                    self.movieDetail = movieDetailModelResp
+                    UserDefaultsHelper().saveMovie(movieId: "\(movieDetailModelResp.id ?? 0)", movie: movieDetailModelResp)
+                    self.delegate?.updateView(isSuccessFullAPIResponse: true)
+                }
+                else {
+                    AlertBuilder.showBannerBelowNavigation(message: "Error in data Parsing")
+                    self.delegate?.updateView(isSuccessFullAPIResponse: false)
+                }
                 
             } else {
                 AlertBuilder.showBannerBelowNavigation(message: response.message)

@@ -17,6 +17,12 @@ class Constant: NSObject {
     static var authToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YmI1YjYzMzNhODdkMGE0OWYwMTUzMGE5NWQ4ZTEwNCIsInN1YiI6IjY1NDM3NGQxNmJlYWVhMDBhYzFlOWEyZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SfOQsCzQUWkIK564znHO5iwXjoCC3NxlvdY2vuUhlK8"
     
     static var imagesBaseUrl = "https://image.tmdb.org/t/p/original"
+    
+    
+    struct userDefaults
+    {
+        static let MovieListing = "MovieListing"
+    }
 }
 
 

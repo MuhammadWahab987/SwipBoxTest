@@ -54,6 +54,8 @@
 		1A30A9C72AF3CE4D00DAFC86 /* MoviesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30A9C22AF3CE4D00DAFC86 /* MoviesListModel.swift */; };
 		1A30A9C82AF3CE4D00DAFC86 /* MoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30A9C32AF3CE4D00DAFC86 /* MoviesListViewModel.swift */; };
 		1A30A9C92AF3CE4D00DAFC86 /* MoviesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A30A9C42AF3CE4D00DAFC86 /* MoviesListViewController.xib */; };
+		1A4DCAC82AF6EECB00C1F3B4 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4DCAC72AF6EECB00C1F3B4 /* UserDefaultExtension.swift */; };
+		1A4DCACA2AF6EEE500C1F3B4 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4DCAC92AF6EEE500C1F3B4 /* UserDefaultsHelper.swift */; };
 		1A711BB02AF671860061757D /* MovieDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A711BAB2AF671860061757D /* MovieDetailRequest.swift */; };
 		1A711BB12AF671860061757D /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A711BAC2AF671860061757D /* MovieDetailViewController.swift */; };
 		1A711BB22AF671860061757D /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A711BAD2AF671860061757D /* MovieDetailModel.swift */; };
@@ -133,6 +135,8 @@
 		1A30A9C32AF3CE4D00DAFC86 /* MoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewModel.swift; sourceTree = "<group>"; };
 		1A30A9C42AF3CE4D00DAFC86 /* MoviesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesListViewController.xib; sourceTree = "<group>"; };
 		1A37B167C2B78FE5D054F340 /* Pods_SBTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SBTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A4DCAC72AF6EECB00C1F3B4 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
+		1A4DCAC92AF6EEE500C1F3B4 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		1A711BAB2AF671860061757D /* MovieDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRequest.swift; sourceTree = "<group>"; };
 		1A711BAC2AF671860061757D /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		1A711BAD2AF671860061757D /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
@@ -325,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				1A30A99D2AF3C69A00DAFC86 /* Loader.swift */,
+				1A4DCAC92AF6EEE500C1F3B4 /* UserDefaultsHelper.swift */,
 				1A30A99F2AF3C6B400DAFC86 /* Toast.swift */,
 				1A30A9A22AF3C6D700DAFC86 /* AlertBuilder.swift */,
 			);
@@ -357,6 +362,7 @@
 				1A30A9B02AF3C7B000DAFC86 /* NSObjectExt.swift */,
 				1A30A9B12AF3C7B000DAFC86 /* UIDeviceExt.swift */,
 				1A30A9B22AF3C7B000DAFC86 /* UIImageExt.swift */,
+				1A4DCAC72AF6EECB00C1F3B4 /* UserDefaultExtension.swift */,
 				1A30A9B42AF3C7B100DAFC86 /* UIImageViewExt.swift */,
 				1A30A9B32AF3C7B000DAFC86 /* UItableViewExt.swift */,
 				1A2946C42AF5214600F648F6 /* UICollectionView.swift */,
@@ -670,6 +676,7 @@
 				1A2946C02AF51F9B00F648F6 /* sliderCustom.swift in Sources */,
 				1A711BB32AF671860061757D /* MovieDetailViewModel.swift in Sources */,
 				1A711BB02AF671860061757D /* MovieDetailRequest.swift in Sources */,
+				1A4DCAC82AF6EECB00C1F3B4 /* UserDefaultExtension.swift in Sources */,
 				1A30A9C72AF3CE4D00DAFC86 /* MoviesListModel.swift in Sources */,
 				1A2946BB2AF51F9B00F648F6 /* UITextViewX.swift in Sources */,
 				1A30A9B62AF3C7B100DAFC86 /* UIViewControllerExt.swift in Sources */,
@@ -677,6 +684,7 @@
 				1A30A9AB2AF3C74B00DAFC86 /* ApiResponse.swift in Sources */,
 				1A30A9C62AF3CE4D00DAFC86 /* MoviesListViewController.swift in Sources */,
 				1A2946C52AF5214700F648F6 /* UICollectionView.swift in Sources */,
+				1A4DCACA2AF6EEE500C1F3B4 /* UserDefaultsHelper.swift in Sources */,
 				1A30A9A32AF3C6D700DAFC86 /* AlertBuilder.swift in Sources */,
 				1A2946BC2AF51F9B00F648F6 /* UIViewControllerX.swift in Sources */,
 				1A30A9B82AF3C7B100DAFC86 /* UIDeviceExt.swift in Sources */,

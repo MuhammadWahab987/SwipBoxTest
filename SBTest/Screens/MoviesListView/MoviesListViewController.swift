@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MoviesListViewController: BaseViewController {
     
@@ -14,7 +15,7 @@ class MoviesListViewController: BaseViewController {
     
     
     // MARK: - Variables & Constants
-    private let refreshControl = UIRefreshControl()
+    let networkReachabilityManager = NetworkReachabilityManager()
     var viewModel:  MoviesListViewModel! {
         didSet {
             super.baseViewModel = viewModel
@@ -38,7 +39,19 @@ class MoviesListViewController: BaseViewController {
         super.viewDidLoad()
         setupViewController()
         setupNavigationBarUI()
-        viewModel.loadData()
+        if networkReachabilityManager?.isReachable ?? false
+        {
+            viewModel.loadData()
+        }
+        else
+        {
+            AlertBuilder.showBannerBelowNavigation(message: "No Internet")
+            if let movieList = UserDefaultsHelper().getMovieListing()
+            {
+                viewModel.moviesList = movieList.results ?? []
+                cvMovies.reloadData()
+            }
+        }
     }
     
     // MARK: - UIViewController Helper Methods

@@ -38,7 +38,7 @@
                                         <constraint firstAttribute="width" secondItem="nka-7q-bqc" secondAttribute="height" multiplier="207:250" id="L4o-cF-e1v"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSg-HF-RsI">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSg-HF-RsI">
                                     <rect key="frame" x="10" y="510" width="394" height="27.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                     <nil key="textColor"/>

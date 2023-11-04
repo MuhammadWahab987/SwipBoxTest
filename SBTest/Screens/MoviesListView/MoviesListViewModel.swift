@@ -29,10 +29,18 @@ class MoviesListViewModel: BaseViewModel {
             self.delegate?.hideProgress()
             
             if response.success {
-                let moviesListModelResp = response.data as? MoviesListModel
-                print("moviesListModelResp:",moviesListModelResp)
-                self.moviesList = moviesListModelResp?.results ?? []
-                self.delegate?.updateView(isSuccessFullAPIResponse: true)
+                if let moviesListModelResp = response.data as? MoviesListModel
+                {
+                    print("moviesListModelResp:",moviesListModelResp)
+                    self.moviesList = moviesListModelResp.results ?? []
+                    UserDefaultsHelper().saveMovieListing(movieList: moviesListModelResp)
+                    self.delegate?.updateView(isSuccessFullAPIResponse: true)
+                }
+                else
+                {
+                    AlertBuilder.showBannerBelowNavigation(message: "Error in data Parsing")
+                    self.delegate?.updateView(isSuccessFullAPIResponse: false)
+                }
                 
             } else {
                 AlertBuilder.showBannerBelowNavigation(message: response.message)
